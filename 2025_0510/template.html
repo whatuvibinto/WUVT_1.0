@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>What U Vibin To?</title>
+  <script>
+    window.onload = function () {
+      const hour = new Date().getHours();
+      let url = "";
+
+      if (hour >= 6 && hour < 11) {
+        url = "{{MORNING_URL}}";
+      } else if (hour >= 16 && hour < 19) {
+        url = "{{EVENING_URL}}";
+      } else if (hour >= 21 && hour < 24) {
+        url = "{{NIGHT_URL}}";
+      } else {
+        url = "{{NORMAL_URL}}";
+      }
+
+      window.location.href = url;
+    };
+  </script>
+</head>
+<body>
+  <p>What U Vibin To?....</p>
+</body>
+</html>
