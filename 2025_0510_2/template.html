@@ -1,0 +1,19 @@
+<script defer>
+  const hour = new Date().getHours();
+  const playlists = {
+    morning: "朝用プレイリストURL",
+    evening: "夕方用プレイリストURL",
+    night: "夜用プレイリストURL",
+    default: "デフォルトプレイリストURL"
+  };
+
+  if (hour >= 6 && hour < 11) {
+    window.location.href = playlists.morning;
+  } else if (hour >= 16 && hour < 19) {
+    window.location.href = playlists.evening;
+  } else if (hour >= 21 && hour < 24) {
+    window.location.href = playlists.night;
+  } else {
+    window.location.href = playlists.default;
+  }
+</script>
